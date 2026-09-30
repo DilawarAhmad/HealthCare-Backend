@@ -33,7 +33,7 @@ A RESTful Healthcare Backend built using Django, Django REST Framework (DRF), Po
 
 ```bash
 git clone https://github.com/DilawarAhmad/HealthCare-Backend.git
-cd healthcare-backend
+cd HealthCare-Backend
 ```
 
 ### Create Virtual Environment
