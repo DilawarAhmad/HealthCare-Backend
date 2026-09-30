@@ -32,7 +32,7 @@ A RESTful Healthcare Backend built using Django, Django REST Framework (DRF), Po
 ### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/healthcare-backend.git
+git clone https://github.com/DilawarAhmad/HealthCare-Backend.git
 cd healthcare-backend
 ```
 
