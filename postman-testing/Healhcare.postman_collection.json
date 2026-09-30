@@ -1,0 +1,630 @@
+{
+  "info": {
+    "_postman_id": "5c944282-e48a-4f71-86bb-e658b986108a",
+    "name": "Healhcare",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57175665",
+    "_collection_link": "https://go.postman.co/collection/57175665-5c944282-e48a-4f71-86bb-e658b986108a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"first_name\": \"Adil\",\n    \"last_name\": \"Wagay\",\n    \"email\": \"aadil@gmail.com\",\n    \"password\": \"adil12345\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/auth/register/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "register",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"aadil@gmail.com\",\n    \"password\": \"adil12345\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/auth/login/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "login",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Doctor",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_0g1v}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"New Doctor\",\n    \"specialization\": \"Neurology\",\n    \"experience\": 12,\n    \"hospital\": \"Fortis Hospital\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/doctors/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "doctors",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Doctors",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{auth_secret_0xsp}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/doctors/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "doctors",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Details of Specific Doctor",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{auth_secret_0xsp}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/doctors/3",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "doctors",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Doctor",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_0xsp}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"New Updated Doctor\",\n    \"specialization\": \"Neurology\",\n    \"experience\": 12,\n    \"hospital\": \"Fortis Hospital\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/doctors/4/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "doctors",
+            "4",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Doctor",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_0xsp}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/doctors/7/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "doctors",
+            "7",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Mappings",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkwNzQwMzMwLCJpYXQiOjE3OTA3NDAwMzAsImp0aSI6IjIwYjhmYjA2YjU3MjQ5Mzk4ZWVjNmI2MDlhZGIwZjAwIiwidXNlcl9pZCI6IjMifQ.Z70rq8U4Apzr-6bwGdAOm84HsswqS6k8_xn8WYmJUl0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"patient\": 5,\n    \"doctor\": 5\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/mappings/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "mappings",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Patients",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkwNzM5NDM3LCJpYXQiOjE3OTA3MzkxMzcsImp0aSI6Ijg1OTM0OGE4ZmNmNTQ4NzE5YjFhYjlmOThhMmU5NTg1IiwidXNlcl9pZCI6IjMifQ.jmChIWV7JsaRZ0WoFMUdTohfBo5vjKvRrZ3vl3Soo7I",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/patients/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "patients",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Patient",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkwNzM5MzAzLCJpYXQiOjE3OTA3MzkwMDMsImp0aSI6IjEyYmZhZDA4YzY0ZjQ5YjJhZmVhMzNhNDAyMzg1NGJlIiwidXNlcl9pZCI6IjMifQ.D5YtjvmNK3r8DVoydotX0FfumYFJHiKg5Hyi9DDhVGw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"William Thomas\",\n    \"age\": 67,\n    \"gender\": \"Male\",\n    \"disease\": \"Parkinson's Disease\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/patients/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "patients",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Specific Patient Details",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkwNzM5NDk0LCJpYXQiOjE3OTA3MzkxOTQsImp0aSI6IjQ5OGUzYmM2YzIyYTRhNjhiNzE5OGQ5MWNkOTRmYTVjIiwidXNlcl9pZCI6IjMifQ.vSCsdyYk8BN7ZW9tVrgWshXBFb2j4SOTXh29Jaj59c0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/patients/1/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "patients",
+            "1",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Patient",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkwNzM5NTUxLCJpYXQiOjE3OTA3MzkyNTEsImp0aSI6IjhiNGRmNzhiYzAxNzQ0YWJhN2NiNzNhNTM1NWViYjBhIiwidXNlcl9pZCI6IjMifQ.27oS-_bHvz85mYSFdOSxU52mCRX0l-X_cT6Jsb4-ruw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Updated Patient\",\n    \"age\": 40,\n    \"gender\": \"Female\",\n    \"disease\": \"Thyroid Disorder\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/patients/4/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "patients",
+            "4",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Patient",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkwNzM5NjM1LCJpYXQiOjE3OTA3MzkzMzUsImp0aSI6IjYyMDkwYjQyOTFkYTRiY2M5YWI1MjE0NThkODczNDgzIiwidXNlcl9pZCI6IjMifQ.61C8Cz0fEbVaqJxa-LbM4YP0IazfZehCQsRHtShSbfY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/patients/3/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "patients",
+            "3",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Mappings",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkwNzQwNDgzLCJpYXQiOjE3OTA3NDAxODMsImp0aSI6IjEyZDE5ZjQwODBkNTQxZWFhYzFlNjk4NDI0NzIyYWMzIiwidXNlcl9pZCI6IjMifQ.NGLwidGTcV6At-KcVqGqDUN6yh78D0cFaf6pU1coFbU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/mappings/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "mappings",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Doctors assigned to Patient",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkwNzQwNTY2LCJpYXQiOjE3OTA3NDAyNjYsImp0aSI6ImJkMjZkZWJjYjk0NTRlZmRhZjRkODQxYjk1MmRkMDM5IiwidXNlcl9pZCI6IjMifQ.CuYDp8EMYvNQ_MKX7VqJ2Yg6dj-g2BdJgZSFcXHOIHo",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/mappings/1/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "mappings",
+            "1",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Mapping",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkwNzQwNjkwLCJpYXQiOjE3OTA3NDAzOTAsImp0aSI6IjQ5Njc4NDNkOTFhYjQyNjE4MjViOGQxODU0MTgzN2NkIiwidXNlcl9pZCI6IjMifQ.hZeChE-u1OunkALrL_1tTTtT-gkTG-3glh1v8wmGX4I",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/mappings/delete/2/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "mappings",
+            "delete",
+            "2",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_0g1v",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_0xsp",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0xsp",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_16n3",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0nv9",
+      "secret": true
+    }
+  ]
+}

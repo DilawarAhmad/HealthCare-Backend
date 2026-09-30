@@ -1,0 +1,16 @@
+from django.urls import path
+from .views import (
+    PatientListCreateView,
+    PatientDetailView
+)
+
+urlpatterns = [
+    path(
+        "",
+        PatientListCreateView.as_view()
+    ),
+    path(
+        "<int:id>/",
+        PatientDetailView.as_view()
+    ),
+]
